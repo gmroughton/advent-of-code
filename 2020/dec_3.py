@@ -33,9 +33,9 @@ def problem_five(input_matrix, slope, tree="#"):
 print(problem_five(INPUT, (3, 1)))
 # Second: Find the product of trees hit with 5 different slopes
 print(
-    problem_five(INPUT, (1, 1)) *
-    problem_five(INPUT, (3, 1)) *
-    problem_five(INPUT, (5, 1)) *
-    problem_five(INPUT, (7, 1)) *
-    problem_five(INPUT, (1, 2))
+    problem_five(INPUT, (1, 1))
+    * problem_five(INPUT, (3, 1))
+    * problem_five(INPUT, (5, 1))
+    * problem_five(INPUT, (7, 1))
+    * problem_five(INPUT, (1, 2))
 )
