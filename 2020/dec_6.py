@@ -1,47 +1,49 @@
 def problem_eleven(filename):
     """
     :param filename: File containing answers to customs form
-    :return: Sum of any yes for each group
+    :return: Sum of any questions an individual said yes to
     """
     total_sum = 0
-    unique_yes = set()
+    group_answers = set()
+
     with open(filename) as f:
         for line in f:
             line = line.rstrip('\n')
-            if len(line) == 0:
-                total_sum += len(unique_yes)
-                unique_yes = set()
+            if len(line) > 0:
+                group_answers |= set(line)
             else:
-                unique_yes |= set(line)
+                total_sum += len(group_answers)
+                group_answers = set()
 
-    total_sum += len(unique_yes)
+    total_sum += len(group_answers)
     return total_sum
 
 
 def problem_twelve(filename):
     """
     :param filename: File containing answers to customs form
-    :return: Sum of questions all members sed yes to
+    :return: Sum of questions every individual member said yes to
     """
     total_sum = 0
-    every_yes = set()
     first_set = True
+    group_answers = set()
+
     with open(filename) as f:
         for line in f:
             line = line.rstrip('\n')
-            if len(line) == 0:
-                total_sum += len(every_yes)
-                every_yes = set()
-                first_set = True
-            else:
-                line_yes = set(line)
+            if len(line) > 0:
+                individual_answers = set(line)
                 if first_set:
-                    every_yes = line_yes
+                    group_answers = individual_answers
                     first_set = False
                 else:
-                    every_yes &= line_yes
+                    group_answers &= individual_answers
+            else:
+                total_sum += len(group_answers)
+                group_answers = set()
+                first_set = True
 
-    total_sum += len(every_yes)
+    total_sum += len(group_answers)
     return total_sum
 
 
