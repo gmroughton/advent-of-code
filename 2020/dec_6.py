@@ -48,8 +48,8 @@ def problem_twelve(filename):
 
 
 # Test Sets
-print(problem_eleven("files/small_custom_forms.txt"))
-print(problem_twelve("files/small_custom_forms.txt"))
+print(problem_eleven("files/test_custom_forms.txt"))
+print(problem_twelve("files/test_custom_forms.txt"))
 
 # Full Set
 print(problem_eleven("files/custom_forms.txt"))
