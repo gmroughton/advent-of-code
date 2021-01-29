@@ -1,15 +1,7 @@
-def load_cypher(filename):
-    """
-    Read file and convert to list of Integer values
-    :param filename: One Integer per row
-    :return: List of Integers
-    """
-    with open(filename) as f:
-        return [int(line.strip()) for line in f]
+from utils.file_utils import file_to_list
 
-
-TEST_CYPHER = load_cypher("files/test_xmas_cypher.txt")
-CYPHER = load_cypher("files/xmas_cypher.txt")
+TEST_CYPHER = file_to_list("files/test_xmas_cypher.txt")
+CYPHER = file_to_list("files/xmas_cypher.txt")
 
 
 def two_number_sum(array, target_sum):
